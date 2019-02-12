@@ -1,19 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="./main.6aaaf2d9.css">
+  <link rel="stylesheet" href="main.css">
   <title>Валентинка</title>
-  <link rel="stylesheet" href="./main.0e5afa4a.css">
 </head>
-
 <body>
-  <div id="app"> </div>
-  <script src="./main.5c87d0e3.js"></script>
-  <script src="./background.4f0c15d8.js"></script>
+  <div id="app">
+    <canvas id='sakura'></canvas>
+      <div id="word1"></div>
+      <div class="card">
+        <div class="card__side card__side--front card__side--front-1">
+          <div class="card__description">
+            <div id="chest">
+              <div class="heart left side top"></div>
+              <div class="heart center">&hearts;</div>
+              <div class="heart right side"></div>
+            </div>
+          </div>
+        </div>
+        <div class="card__side card__side--back card__side--back-1">
+          <div class="card__description">
+            <div id="background">
+              <div id="img"><div id="lips"></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="word2"></div>
+    </div>
+  <script src="./background.js"></script>
   <script id="sakura_point_vsh" type="x-shader/x_vertex">
     uniform mat4 uProjection;
     uniform mat4 uModelview;
@@ -178,6 +196,7 @@
       gl_FragColor = vec4(col * 0.5, alpha);
     }
   </script>
+  <!-- effects -->
   <script id="fx_common_vsh" type="x-shader/x_vertex">
     uniform vec3 uResolution;
     attribute vec2 aPosition;
@@ -248,6 +267,7 @@
       gl_FragColor = col / 5.0;
     }
   </script>
+    <!-- effect fragment shader template -->
   <script id="fx_common_fsh" type="x-shader/x_fragment">
     #ifdef GL_ES
     //precision mediump float;
@@ -263,6 +283,7 @@
       gl_FragColor = texture2D(uSrc, texCoord);
     }
   </script>
+  <!-- post processing -->
   <script id="pp_final_vsh" type="x-shader/x_vertex">
     uniform vec3 uResolution;
     attribute vec2 aPosition;
@@ -297,5 +318,4 @@
     }
   </script>
 </body>
-
 </html>
