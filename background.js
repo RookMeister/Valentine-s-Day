@@ -1,3 +1,16 @@
+heart.onclick = function() {
+    this.style.transform='rotateY(-180deg)'
+    image.style.transform='rotate(0)'
+    console.log(this.style.transform)
+    console.log(image.style.transform)
+  }
+  image.onclick = function() {
+    this.style.transform='rotateY(-180deg)'
+    heart.style.transform='rotate(0)'
+    console.log(this.style.transform)
+    console.log(heart.style.transform)
+  }
+
 // Utilities
 var Vector3 = {};
 var Matrix44 = {};
