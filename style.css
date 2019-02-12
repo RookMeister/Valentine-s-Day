@@ -81,7 +81,7 @@ body {
     transition: all .6s ease;
 }
     
-.card__side --front {
+.card__side--front {
     background: rgba(0,0,0, 0);
 }
     
@@ -90,17 +90,12 @@ body {
     transform: rotateY(180deg);
 }
   
-.card:hover .card__side--front {
+.card:active,.card:hover .card__side--front {
     transform: rotateY(-180deg);
   }
   
-  .card:hover .card__side--back {
+  .card:active,.card:hover .card__side--back {
     transform: rotate(0);
-  }
-  
-  .card__description {
-    text-transform: uppercase;
-    font-size: 5em;
   }
     
     svg {
