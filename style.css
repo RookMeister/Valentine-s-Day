@@ -91,12 +91,12 @@ body {
     -webkit-transform: rotateY(180deg);
 }
   
-.card:active,.card:hover,.card:focus .card__side--front {
+.card:focus,.card:hover .card__side--front {
     transform: rotateY(-180deg);
     -webkit-transform: rotateY(-180deg);
   }
   
-  .card:active,.card:hover,.card:focus .card__side--back {
+  .card:focus,.card:hover  .card__side--back {
     transform: rotate(0);
     -webkit-transform: rotate(0);
   }
