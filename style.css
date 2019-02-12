@@ -87,11 +87,11 @@ body {
     transform: rotateY(180deg);
 }
   
-.card:active .card__side--front {
+.card:hover .card__side--front {
     transform: rotateY(-180deg);
   }
   
-  .card:active .card__side--back {
+  .card:hover .card__side--back {
     transform: rotate(0);
   }
   
