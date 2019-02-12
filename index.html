@@ -1,4 +1,20 @@
-<!DOCTYPE html><html lang="en"> <head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <meta http-equiv="X-UA-Compatible" content="ie=edge"> <link rel="stylesheet" href="/main.6aaaf2d9.css"> <title>Vue Parcel Example</title> <link rel="stylesheet" href="/main.0e5afa4a.css"></head> <body> <div id="app"> </div> <script src="/main.5c87d0e3.js"></script> <script src="/background.4f0c15d8.js"></script> <script id="sakura_point_vsh" type="x-shader/x_vertex">
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="./main.6aaaf2d9.css">
+  <title>Валентинка</title>
+  <link rel="stylesheet" href="./main.0e5afa4a.css">
+</head>
+
+<body>
+  <div id="app"> </div>
+  <script src="./main.5c87d0e3.js"></script>
+  <script src="./background.4f0c15d8.js"></script>
+  <script id="sakura_point_vsh" type="x-shader/x_vertex">
     uniform mat4 uProjection;
     uniform mat4 uModelview;
     uniform vec3 uResolution;
@@ -89,7 +105,8 @@
       //-0.69315 = ln(0.5)
       distancefade = min(1.0, exp((uFade.x - pdist) * 0.69315 / uFade.y));
     }
-  </script> <script id="sakura_point_fsh" type="x-shader/x_fragment">
+  </script>
+  <script id="sakura_point_fsh" type="x-shader/x_fragment">
     #ifdef GL_ES
     //precision mediump float;
     precision highp float;
@@ -160,7 +177,8 @@
       
       gl_FragColor = vec4(col * 0.5, alpha);
     }
-  </script>  <script id="fx_common_vsh" type="x-shader/x_vertex">
+  </script>
+  <script id="fx_common_vsh" type="x-shader/x_vertex">
     uniform vec3 uResolution;
     attribute vec2 aPosition;
   
@@ -172,7 +190,8 @@
       texCoord = aPosition.xy * 0.5 + vec2(0.5, 0.5);
       screenCoord = aPosition.xy * vec2(uResolution.z, 1.0);
     }
-  </script> <script id="bg_fsh" type="x-shader/x_fragment">
+  </script>
+  <script id="bg_fsh" type="x-shader/x_fragment">
     #ifdef GL_ES
     //precision mediump float;
     precision highp float;
@@ -191,7 +210,8 @@
       col = mix(vec3(0.02, 0.0, 0.03), vec3(0.96, 0.98, 1.0) * 1.5, c);
       gl_FragColor = vec4(col * 0.5, 1.0);
     }
-  </script> <script id="fx_brightbuf_fsh" type="x-shader/x_fragment">
+  </script>
+  <script id="fx_brightbuf_fsh" type="x-shader/x_fragment">
     #ifdef GL_ES
     //precision mediump float;
     precision highp float;
@@ -206,7 +226,8 @@
       vec4 col = texture2D(uSrc, texCoord);
       gl_FragColor = vec4(col.rgb * 2.0 - vec3(0.5), 1.0);
     }
-  </script> <script id="fx_dirblur_r4_fsh" type="x-shader/x_fragment">
+  </script>
+  <script id="fx_dirblur_r4_fsh" type="x-shader/x_fragment">
     #ifdef GL_ES
     //precision mediump float;
     precision highp float;
@@ -226,7 +247,8 @@
       col = col + texture2D(uSrc, texCoord - (uBlurDir.xy + uBlurDir.zw) * uDelta);
       gl_FragColor = col / 5.0;
     }
-  </script>  <script id="fx_common_fsh" type="x-shader/x_fragment">
+  </script>
+  <script id="fx_common_fsh" type="x-shader/x_fragment">
     #ifdef GL_ES
     //precision mediump float;
     precision highp float;
@@ -240,7 +262,8 @@
     void main(void) {
       gl_FragColor = texture2D(uSrc, texCoord);
     }
-  </script>  <script id="pp_final_vsh" type="x-shader/x_vertex">
+  </script>
+  <script id="pp_final_vsh" type="x-shader/x_vertex">
     uniform vec3 uResolution;
     attribute vec2 aPosition;
     varying vec2 texCoord;
@@ -250,7 +273,8 @@
       texCoord = aPosition.xy * 0.5 + vec2(0.5, 0.5);
       screenCoord = aPosition.xy * vec2(uResolution.z, 1.0);
     }
-  </script> <script id="pp_final_fsh" type="x-shader/x_fragment">
+  </script>
+  <script id="pp_final_fsh" type="x-shader/x_fragment">
     #ifdef GL_ES
     //precision mediump float;
     precision highp float;
@@ -271,4 +295,7 @@
       gl_FragColor = vec4(col.rgb, 1.0);
       gl_FragColor.a = 1.0;
     }
-  </script> </body> </html>
+  </script>
+</body>
+
+</html>
